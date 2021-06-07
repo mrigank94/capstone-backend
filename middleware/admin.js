@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 function admin(req, res, next) {
-    const token = req.header('x-auth-header');
+    const token = req.header('x-auth-token');
 
     if(!token) {
         //401 Unauthorized

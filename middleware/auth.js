@@ -6,7 +6,7 @@ function auth(req, res, next) {
 
     if(!token) {
         //401 Unauthorized
-        return res.status(401).send('Token not provided');
+        return res.status(401).send('Please Login first to access this endpoint!');
     }
 
     try {
