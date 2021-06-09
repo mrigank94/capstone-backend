@@ -9,7 +9,6 @@ const {
   updateProductDetails,
   deleteProduct
 } = require("./controllers/product");
-const { getUserDetails } = require("./controllers/user");
 const router = express.Router();
 const { signUp, signIn } = require("./controllers/auth");
 const admin = require("./middleware/admin");
@@ -18,9 +17,6 @@ const auth = require("./middleware/auth");
 //Auth
 router.post("/api/v1/users", signUp);
 router.post("/api/v1/auth", signIn);
-
-//User
-router.get("/api/v1/users/:id", auth, getUserDetails);
 
 //Address
 router.post("/api/v1/addresses", auth, addAddress);
